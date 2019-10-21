@@ -1,6 +1,5 @@
 package pl.codeleak.samples.springbootjunit5.config;
 
-import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.boot.web.client.RestTemplateBuilder;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -9,7 +8,6 @@ import pl.codeleak.samples.springbootjunit5.todo.JsonPlaceholderTaskRepository;
 import pl.codeleak.samples.springbootjunit5.todo.TaskRepository;
 
 @Configuration
-@EnableConfigurationProperties(JsonPlaceholderApiConfigProperties.class)
 public class JsonPlaceholderApiConfig {
 
     private final JsonPlaceholderApiConfigProperties properties;
