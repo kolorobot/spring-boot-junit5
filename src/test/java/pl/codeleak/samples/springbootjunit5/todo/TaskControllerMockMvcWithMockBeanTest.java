@@ -27,11 +27,8 @@ class TaskControllerMockMvcWithMockBeanTest {
     @Test
     void findsTaskById() throws Exception {
         // arrange
-        var taskToReturn = new Task();
-        taskToReturn.setId(1);
-        taskToReturn.setTitle("delectus aut autem");
-        taskToReturn.setCompleted(true);
-        taskToReturn.setUserId(1);
+        var taskToReturn = new Task(1, "delectus aut autem", 1, true);
+
 
         when(taskRepository.findOne(1)).thenReturn(taskToReturn);
 

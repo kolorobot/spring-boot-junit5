@@ -24,13 +24,8 @@ class TaskControllerIntegrationTestWithMockBeanTest {
 
     @Test
     void findsTaskById() {
-
         // arrange
-        var taskToReturn = new Task();
-        taskToReturn.setId(1);
-        taskToReturn.setTitle("delectus aut autem");
-        taskToReturn.setCompleted(true);
-        taskToReturn.setUserId(1);
+        var taskToReturn = new Task(1, "delectus aut autem", 1, true);
 
         when(taskRepository.findOne(1)).thenReturn(taskToReturn);
 
@@ -39,7 +34,7 @@ class TaskControllerIntegrationTestWithMockBeanTest {
 
         // assert
         assertThat(task)
-                .extracting(Task::getId, Task::getTitle, Task::isCompleted, Task::getUserId)
+                .extracting(Task::id, Task::title, Task::completed, Task::userId)
                 .containsExactly(1, "delectus aut autem", true, 1);
     }
 }
