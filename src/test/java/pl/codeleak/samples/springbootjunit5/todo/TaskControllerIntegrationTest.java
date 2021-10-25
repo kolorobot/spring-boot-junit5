@@ -25,6 +25,6 @@ class TaskControllerIntegrationTest {
         // assert
         assertThat(task)
                 .extracting(Task::id, Task::title, Task::completed, Task::userId)
-                .containsExactly(1, "delectus aut autem", false, 1);
+                .containsExactly(1, "Hagamos que falle", false, 1);
     }
 }
